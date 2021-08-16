@@ -1,0 +1,35 @@
+<h2>My Notes</h2>
+
+<div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" class="notes">
+  <mat-list fxFlex="100%" fxFlex.gt-sm="50%">
+    <mat-list-item *ngFor='let note of notes'>
+      <a (click)="isCollapsed = !isCollapsed"
+         [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">
+        {{note.title}}
+      </a>
+      <div fxLayout="row" fxLayoutAlign="space-between center" id="collapseBasic" [collapse]="isCollapsed" [isAnimated]="true">
+        <div class="card-block card-header">
+          <button mat-raised-button color="primary">Edit</button>
+          <button mat-raised-button color="warn">Delete</button>
+        </div>
+      </div>
+    </mat-list-item>
+  </mat-list>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="space-between center">
+  <button mat-raised-button color="primary">New Note</button>
+</div>
+
+<!--<div fxFlex="100%" fxFlex.gt-sm="70%" class="form-container">
+    <form [formGroup]="editNoteForm">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Title" formControlName="title">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <textarea matInput placeholder="Note text" formControlName="text"></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="primary">Update</button>
+    </form>
+  </div>-->
