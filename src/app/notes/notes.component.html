@@ -1,35 +1,40 @@
-<h2>My Notes</h2>
+<div class="container-fluid" style="padding-top:10px; margin-bottom:40px;">
+  <h1>
+    My Notes
+  </h1>
+</div>
 
-<div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" class="notes">
-  <mat-list fxFlex="100%" fxFlex.gt-sm="50%">
-    <mat-list-item *ngFor='let note of notes'>
-      <a (click)="isCollapsed = !isCollapsed"
-         [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">
-        {{note.title}}
-      </a>
-      <div fxLayout="row" fxLayoutAlign="space-between center" id="collapseBasic" [collapse]="isCollapsed" [isAnimated]="true">
-        <div class="card-block card-header">
-          <button mat-raised-button color="primary">Edit</button>
-          <button mat-raised-button color="warn">Delete</button>
-        </div>
+<div class="container">
+
+  <accordion [isAnimated]="true">
+
+    <div class="row justify-content-md-center" *ngFor='let note of notes; let i = index' style="padding-top:10px;">
+
+      <div class="col"></div>
+
+      <div class="col-6">
+
+        <accordion-group heading="{{note.title}}">
+
+          <div class="row" style="padding-bottom:10px;">{{note.text}}</div>
+
+          <div class="row">
+            <button mat-raised-button color="primary" (click)="componentVisible[i] = !componentVisible[i]" style="margin-right:5px;">Edit</button>
+            <button mat-raised-button color="warn" (click)="deleteNote(note.id)">Delete</button>
+          </div>
+
+          <app-edit-note *ngIf="componentVisible[i]" [noteToEdit]="note"></app-edit-note>
+
+        </accordion-group>
+
       </div>
-    </mat-list-item>
-  </mat-list>
+
+      <div class="col"></div>
+
+    </div>
+
+  </accordion>
+
+  <app-new-note></app-new-note>
+
 </div>
-
-<div fxLayout="row" fxLayoutAlign="space-between center">
-  <button mat-raised-button color="primary">New Note</button>
-</div>
-
-<!--<div fxFlex="100%" fxFlex.gt-sm="70%" class="form-container">
-    <form [formGroup]="editNoteForm">
-      <mat-form-field class="full-width">
-        <input matInput placeholder="Title" formControlName="title">
-      </mat-form-field>
-
-      <mat-form-field class="full-width">
-        <textarea matInput placeholder="Note text" formControlName="text"></textarea>
-      </mat-form-field>
-      <button mat-raised-button color="primary">Update</button>
-    </form>
-  </div>-->

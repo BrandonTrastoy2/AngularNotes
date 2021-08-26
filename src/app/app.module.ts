@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http'
+
 import { FlexLayoutModule } from "@angular/flex-layout";
 
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -19,16 +21,22 @@ import { HomeComponent } from './home/home.component';
 import { NotesComponent } from './notes/notes.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { NewNoteComponent } from './new-note/new-note.component';
+import { EditNoteComponent } from './edit-note/edit-note.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NotesComponent,
+    NewNoteComponent,
+    EditNoteComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
@@ -43,6 +51,7 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
     AppRoutingModule,
     TooltipModule.forRoot(),
     CollapseModule.forRoot(),
+    AccordionModule.forRoot(),
   ],
   bootstrap: [AppComponent]
 })

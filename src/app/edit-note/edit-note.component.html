@@ -1,0 +1,21 @@
+<div class="container editNote">
+  
+  <div class="row" style="padding-top:10px;">
+
+    <div class="col">
+      <form>
+        <div class="form-group">
+          <label for="editTitle">Title</label>
+          <input type="text" class="form-control" id="editTitle" #editTitle value={{noteToEdit.title}}>
+        </div>
+        <div class="form-group">
+          <label for="editText">Note</label>
+          <input type="text" class="form-control" id="editText" #editText value={{noteToEdit.text}}>
+        </div>
+        <button class="btn btn-success" (click)="editNote(noteToEdit, editTitle.value, editText.value)">Save</button>
+      </form>
+    </div>
+
+  </div>
+
+</div>
