@@ -15,3 +15,24 @@
   width: 80%;
   display: block;
 }
+
+.container-fluid {
+  padding-top:10px;
+  margin-bottom:10px;
+}
+
+.notesDisplay {
+  margin-bottom: 40px; /*This gives me some space at the bottom of the page*/
+}
+
+.noteText {
+    padding-bottom: 10px;
+}
+
+.editButton {
+  margin-right:5px;
+}
+
+.noteContainer {
+  padding-top:10px;
+}

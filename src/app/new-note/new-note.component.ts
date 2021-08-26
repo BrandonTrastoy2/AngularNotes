@@ -17,9 +17,8 @@ export class NewNoteComponent implements OnInit {
   }
 
   createNote(title: string, text: string) {
-    //console.log(title);
-    //console.log(text);
     this.notesComponent.createNote(title, text);
+    this.isCollapsed = true;
   }
 
 }

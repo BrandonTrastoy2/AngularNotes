@@ -1,14 +1,14 @@
-<div class="container-fluid" style="padding-top:10px; margin-bottom:40px;">
+<div class="container-fluid" >
   <h1>
     My Notes
   </h1>
 </div>
 
-<div class="container">
+<div class="container notesDisplay">
 
   <accordion [isAnimated]="true">
 
-    <div class="row justify-content-md-center" *ngFor='let note of notes; let i = index' style="padding-top:10px;">
+    <div class="row noteContainer" *ngFor='let note of notes; let i = index'>
 
       <div class="col"></div>
 
@@ -16,11 +16,11 @@
 
         <accordion-group heading="{{note.title}}">
 
-          <div class="row" style="padding-bottom:10px;">{{note.text}}</div>
+          <div class="row noteText">{{note.text}}</div>
 
           <div class="row">
-            <button mat-raised-button color="primary" (click)="componentVisible[i] = !componentVisible[i]" style="margin-right:5px;">Edit</button>
-            <button mat-raised-button color="warn" (click)="deleteNote(note.id)">Delete</button>
+            <button class="editButton" mat-raised-button color="primary" (click)="componentVisible[i] = !componentVisible[i]">Edit</button>
+            <button class="deleteButton" mat-raised-button color="warn" (click)="deleteNote(note.id)">Delete</button>
           </div>
 
           <app-edit-note *ngIf="componentVisible[i]" [noteToEdit]="note"></app-edit-note>

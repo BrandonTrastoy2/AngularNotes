@@ -7,15 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public title = 'Angular Notes';
-  public isAuthenticated!: boolean;
+ 
 
   ngOnInit() {
-    this.isAuthenticated = false;
-  }
-
-  login() {
-  }
-
-  logout() {
   }
 }

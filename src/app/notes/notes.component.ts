@@ -19,6 +19,7 @@ export class NotesComponent implements OnInit {
   constructor(private noteService: NotesService) { }
 
   ngOnInit() {
+    // This is what allows the notes to get populated at the start of the page
     this.getNotes();
   }
 

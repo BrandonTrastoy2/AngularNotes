@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row" style="padding-top:10px;">
+  <div class="row">
 
     <div class="col"></div>
 
@@ -14,12 +14,12 @@
 
   </div>
 
-  <div class="row" style="padding-top:10px;" >
+  <div class="row">
 
     <div class="col-3"></div>
 
     <div class="col-6" id="collapseBasic" [collapse]="isCollapsed" [isAnimated]="true" >
-      <form>
+      <form id="createNoteForm" #createNoteForm>
         <div class="form-group">
           <label for="title">Title</label>
           <input type="text" class="form-control" id="noteTitle" #noteTitle placeholder="Enter a title">
@@ -28,7 +28,7 @@
           <label for="noteText">Note</label>
           <input type="text" class="form-control" id="noteText" #noteText placeholder="Write some notes ...">
         </div>
-        <button class="btn btn-primary" (click)="createNote(noteTitle.value, noteText.value)">Create</button>
+        <button class="btn btn-primary"  (click)="createNote(noteTitle.value, noteText.value); createNoteForm.reset();">Create</button>
       </form>
     </div>
 
