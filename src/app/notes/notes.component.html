@@ -14,9 +14,9 @@
 
       <div class="col-6">
 
-        <accordion-group heading="{{note.title}}">
+        <accordion-group id="currentNoteTitle" heading="{{note.title}}">
 
-          <div class="row noteText">{{note.text}}</div>
+          <div id="currentNoteText" class="row noteText">{{note.text}}</div>
 
           <div class="row">
             <button class="editButton" mat-raised-button color="primary" (click)="componentVisible[i] = !componentVisible[i]">Edit</button>

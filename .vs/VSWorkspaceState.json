@@ -3,9 +3,9 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\home",
+    "\\src\\app\\new-note",
     "\\src\\app\\notes"
   ],
-  "SelectedNode": "\\src\\app\\app.module.ts",
+  "SelectedNode": "\\src\\app\\notes\\notes.component.ts",
   "PreviewInSolutionExplorer": false
 }
